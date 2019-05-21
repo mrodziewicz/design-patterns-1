@@ -19,5 +19,6 @@ console.log( 'window width is: ', checker1.getWidth() );
 const checker2 = new WidthChecker();
 console.log( 'window width is: ', checker2.getWidth() );
 
-// zadanie 1 - bez zmian w powyższych linijkach, powinno zostać wypisane 'true'
+// zadanie 1 - bez zmian w poniższych linijkach, powinno zostać wypisane 'true'
+// (zmodyfikować klasę WidthChecker, aby była singletonem)
 console.log( checker1.getId() === checker2.getId() );

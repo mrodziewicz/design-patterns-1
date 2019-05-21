@@ -27,7 +27,12 @@ class VideoSlide {
 // zadanie - wypełnić
 const SlidesFactory = {
   create(type, url) {
-    
+    switch( type ) {
+      case 'image':
+        return new ImageSlide(url);
+      case 'video':
+        return new VideoSlide(url, 'mp4');
+    }
   }
 }
 
@@ -41,13 +46,9 @@ const slides = [
 
 slides.forEach( slide => {
   let slideContent;
-
+  
+  slideContent = SlidesFactory.create( slide.type, slide.url );
   // zadanie - zamienić poniższy kod na użycie slidesFactory (1 linijka!)
-  if( slide.type === 'image' ) {
-    slideContent = (new ImageSlide(slide.url)).display();
-  } else if( slide.type === 'video' ) {
-    slideContent = (new VideoSlide(slide.url, 'mp4')).display();
-  }
 
-  console.log(slideContent);
+  console.log(slideContent.display());
 } );
