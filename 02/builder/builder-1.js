@@ -20,6 +20,12 @@ class PersonBuilder {
     this.phoneNr = undefined;
   }
 
+  getPerson() {
+    return new Person(
+      this.id, this.name, this.age, this.address, this.phoneNr
+    );
+  }
+
   setId( id ) {
     this.id = id;
     return this;
@@ -42,10 +48,12 @@ class PersonBuilder {
   }
 }
 
-
+/*
 const barbie = new Person( 1, "Barbie", 18, undefined, "888888888" );
 const ken = new PersonBuilder()
             .setId( 2 )
             .setName( "Ken" )
             .setAge( "22" )
-            .setPhoneNr( "123789123" );
+            .setPhoneNr( "123789123" )
+            .getPerson();
+*/
